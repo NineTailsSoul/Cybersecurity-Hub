@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Website Detector</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Moving Gradient Background */
+    body {
+      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container for centering */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    /* Card Design */
+    .card {
+      background: rgba(45, 55, 72, 0.9);
+      padding: 35px;
+      border-radius: 12px;
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Glow effect for cards */
+    .card:hover {
+      box-shadow: 0px 5px 30px rgba(0, 255, 255, 0.8);
+      transform: translateY(-10px);
+    }
+
+    .card h2 {
+      font-size: 2.25rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+      color: #cbd5e0;
+    }
+
+    /* Steps Styling */
+    .steps-card {
+      background: rgba(45, 55, 72, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Glow effect for steps card */
+    .steps-card:hover {
+      box-shadow: 0px 5px 30px rgba(0, 255, 255, 0.8);
+      transform: translateY(-10px);
+    }
+
+    .steps-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .steps-card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #cbd5e0;
+    }
+
+    /* Button Design */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: linear-gradient(120deg, #ff6a00, #ee0979);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(120deg, #ee0979, #ff6a00);
+      transform: scale(1.05);
+    }
+
+    /* Result Section */
+    .result {
+      margin-top: 20px;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0px 8px 30px rgba(0, 255, 255, 0.6); /* Glowing effect */
+      opacity: 0;
+      animation: fadeIn 1s forwards; /* Animation for showing result */
+    }
+
+    /* FadeIn Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Glowing Text */
+    .result h3 {
+      font-size: 1.5rem;
+      color: #4fd1c5;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .steps-card, .card {
+        padding: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.75rem;
+      }
+
+      .steps-card h3 {
+        font-size: 1.25rem;
+      }
+
+      .result {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Phishing Detector Section -->
+  <div class="container">
+
+    <!-- Steps Card -->
+    <div class="mt-80 container">
+        <div class="card">
+          <h2>phishing website Detector</h2>
+          <p>it will check is it phishing website or not!</p>
+          <div class="steps-card">
+            <h3>How it works:</h3>
+            <ul>
+              <li>enter URL of website which seems suspicious.</li>
+              <li>We will check is it really a phishing website or not.</li>
+              <li>If found, you'll be notified of any risks.</li>
+            </ul>
+          </div>
+    
+    <!-- Phishing Detection Form Card -->
+    <div class="card">
+      <h2 class="text-3xl font-semibold mb-4">Phishing Website Detector <i class="ri-focus-3-fill"></i></h2>
+      <p>Detect whether a website is a phishing attempt or safe!</p>
+      <input type="text" id="websiteInput" class="p-3 w-full mb-4 rounded-md text-black" placeholder="Enter Website URL">
+      <button id="checkWebsiteBtn" class="bg-cyan-500 rounded-full text-black font-semibold">Check Website</button>
+      
+      <!-- Result Section -->
+      <div id="result" class="result">
+        <h3>Website Status: <span id="status">Loading...</span></h3>
+        <p id="resultText">Please wait while we analyze the website.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simulating the check website logic
+    document.getElementById('checkWebsiteBtn').addEventListener('click', function() {
+      const resultDiv = document.getElementById('result');
+      const statusSpan = document.getElementById('status');
+      const resultText = document.getElementById('resultText');
+
+      resultDiv.style.opacity = 0; // Hide the result initially
+
+      setTimeout(() => {
+        // Simulate website check result
+        const isPhishing = Math.random() < 0.5; // Randomly decide phishing or not
+
+        if (isPhishing) {
+          statusSpan.textContent = "Phishing Detected!";
+          statusSpan.style.color = '#ee0979'; // Red color for phishing
+          resultText.textContent = "This website seems suspicious. Be cautious!";
+        } else {
+          statusSpan.textContent = "Safe Website";
+          statusSpan.style.color = '#4fd1c5'; // Green color for safe
+          resultText.textContent = "This website is safe to visit.";
+        }
+
+        // Fade in the result section
+        resultDiv.style.opacity = 1;
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
