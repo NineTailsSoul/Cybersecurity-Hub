@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest News</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      padding: 20px;
+    }
+    .news-card {
+      background-color: rgba(45, 55, 72, 0.8);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
+    .news-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .news-card p {
+      font-size: 1.125rem;
+      color: #cbd5e0;
+    }
+    .news-card .source {
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center text-4xl mb-5">Latest News</h1>
+    <div id="news-container">
+      <!-- Latest News or Previous News will appear here -->
+    </div>
+  </div>
+
+  <script>
+    // API URL for getting latest news (replace with your actual API Key)
+    const newsAPI = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=YOUR_API_KEY'; 
+
+    // Function to fetch and display news
+    async function fetchNews() {
+      try {
+        const response = await fetch(newsAPI);
+
+        // Check if response is successful
+        if (!response.ok) {
+          throw new Error('Failed to fetch the news data');
+        }
+
+        const data = await response.json();
+        console.log('API Response:', data); // Check the API response
+
+        if (data.articles.length > 0) {
+          // If there are new articles, display them
+          displayNews(data.articles);
+        } else {
+          // If no new articles, display the last available news
+          displayPreviousNews();
+        }
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        displayPreviousNews(); // Show previous news in case of error
+      }
+    }
+
+    // Function to display news articles
+    function displayNews(articles) {
+      const newsContainer = document.getElementById('news-container');
+      newsContainer.innerHTML = ''; // Clear the current news
+
+      articles.forEach(article => {
+        const newsCard = document.createElement('div');
+        newsCard.classList.add('news-card');
+
+        newsCard.innerHTML = `
+          <h2>${sanitizeInput(article.title)}</h2>
+          <p>${sanitizeInput(article.description)}</p>
+          <p class="source">Source: ${sanitizeInput(article.source.name)}</p>
+        `;
+
+        newsContainer.appendChild(newsCard);
+      });
+
+      // Save the latest articles to localStorage for future use
+      localStorage.setItem('previousNews', JSON.stringify(articles));
+    }
+
+    // Function to display previous news (if no new news found)
+    function displayPreviousNews() {
+      const previousNews = JSON.parse(localStorage.getItem('previousNews'));
+
+      if (previousNews && previousNews.length > 0) {
+        const newsContainer = document.getElementById('news-container');
+        newsContainer.innerHTML = ''; // Clear the current news
+
+        previousNews.forEach(article => {
+          const newsCard = document.createElement('div');
+          newsCard.classList.add('news-card');
+
+          newsCard.innerHTML = `
+            <h2>${sanitizeInput(article.title)}</h2>
+            <p>${sanitizeInput(article.description)}</p>
+            <p class="source">Source: ${sanitizeInput(article.source.name)}</p>
+          `;
+
+          newsContainer.appendChild(newsCard);
+        });
+      } else {
+        // If no previous news available, show a message
+        const newsContainer = document.getElementById('news-container');
+        newsContainer.innerHTML = `<p>No news available at the moment. Please try again later.</p>`;
+      }
+    }
+
+    // Function to sanitize input (avoid XSS attacks)
+    function sanitizeInput(input) {
+      const element = document.createElement('div');
+      if (input) {
+        element.innerText = input;
+        return element.innerHTML;
+      }
+      return '';
+    }
+
+    // Call the fetchNews function when the page loads
+    window.onload = fetchNews;
+  </script>
+</body>
+</html>
