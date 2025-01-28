@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Cybersecurity Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+
+    /* Custom Background Gradient Animation */
+    body {
+      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar Design */
+    .navbar {
+      border-radius: 50px;
+      background: rgba(45, 55, 72, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      transition: box-shadow 0.3s ease-in-out;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    .navbar:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); /* Glowing effect on hover */
+    }
+
+    /* Button Hover Glowing Effect */
+    a:hover {
+    
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    }
+
+    /* Card Animation */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Glowing Effect for Service Cards */
+    .service-card:hover {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glowing effect on hover */
+      transform: scale(1.05); /* Slight scaling effect */
+    }
+
+    /* Footer Styling */
+    .footer {
+      background: rgba(45, 55, 72, 0.9);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Subtle glow */
+    }
+
+    .footer:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); /* Glowing effect on footer hover */
+    }
+
+    /* News Section Logo */
+    .news-logo {
+      max-width: 50px; /* Adjust the size as per your need */
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar flex justify-between items-center w-11/12 mx-auto">
+    <div class="text-xl font-bold">Cybersecurity Hub</div>
+    <div>
+      <a href="ourservices.html" class="mx-3 text-lg hover:text-cyan-400 transition-all">Services</a>
+      <a href="reportbug.html" class="mx-3 text-lg hover:text-cyan-400 transition-all">Report Bug</a>
+      <a href="creater.html" class="mx-3 text-lg hover:text-cyan-400 transition-all">Creater</a>
+    </div>
+  </nav>
+
+
+ 
+  <!-- Hero Section -->
+  <header class="text-center mt-60 px-6 md:px-0">
+    <h1 class="text-4xl md:text-6xl font-bold mb-8 animate-pulse">Protecting Your <span style="color: #00bcd4; text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.7), 0 0 15px rgba(0, 255, 255, 0.6);">Digital World</span></h1>
+    <p class="text-lg md:text-xl mb-12">We provide you three services to protect your digital life for free <i class="ri-creative-commons-nc-fill"></i></p>
+    <a href="ourservices.html" class="px-6 py-3 bg-cyan-500 rounded-full text-black font-semibold hover:bg-cyan-600 transition mt-5">Explore Services <i class="ri-send-plane-fill"></i></a>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="mt-28 px-6 md:px-16">
+    <h2 class="text-3xl font-bold text-center mb-12"><i class="ri-arrow-down-circle-fill"></i>  Our Services <i class="ri-arrow-down-circle-fill"></i></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service Card 1: Phishing Protection -->
+      <div class="fade-in bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition service-card">
+        <i class="ri-shield-check-line text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2">Phishing Protection</h3>
+        <p>Enter a URL and we’ll check if it’s a phishing site. If it's safe, we’ll let you know, otherwise, we’ll warn you.</p>
+      </div>
+
+      <!-- Service Card 2: Dark Web Checker -->
+      <div class="fade-in bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition service-card">
+        <i class="ri-lock-line text-4xl text-cyan-400 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2">Dark Web Checker</h3>
+        <p>Check if your email address has been compromised and is being sold on the dark web.</p>
+      </div>
+
+      <!-- Service Card 3: Latest Cybersecurity News -->
+      <div class="fade-in bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition service-card">
+        <i class="ri-newspaper-line text-4xl text-cyan-400 mb-4"></i> <!-- Added news icon here -->
+        <h3 class="text-2xl font-bold mb-2">Latest Cybersecurity News</h3>
+        <p>Stay up-to-date with the latest news and trends in the cybersecurity world. Get timely updates and stay protected.</p>
+      </div>
+    </div>
+  </section>
+  <div>
+    <p class="text-1xl text-center mt-20 text-cyan-300 font-bold">"Please note: This platform is an early prototype and may not always be fully accurate. Your feedback will help improve its performance and reliability as we work toward creating a more robust and precise tool."</p>
+  </div>
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <p>&copy; 2025 Cybersecurity Hub. All rights reserved.<br><i class="ri-github-fill"></i></p>
+  </footer>
+</body>
+</html>
