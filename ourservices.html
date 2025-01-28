@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Cybersecurity Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Moving Gradient Background */
+    body {
+      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Service Cards as Buttons */
+    .service-card {
+      background: rgba(45, 55, 72, 0.9);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+
+        /* Footer Styling */
+        .footer {
+      background: rgba(45, 55, 72, 0.9);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Subtle glow */
+    }
+
+    .footer:hover {
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.8); /* Glowing effect on footer hover */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Services Section -->
+  <section id="services" class="mt-40 max-w-5xl mx-auto px-4">
+    <h1 class="text-5xl font-bold mb-20 text-center"><i class="ri-arrow-down-circle-fill"></i>  OUR SERVICES <i class="ri-arrow-down-circle-fill"></i></h1>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <a href="phishingdetector.html" class="service-card">
+        <i class="ri-shield-check-line text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Phishing Protection</h3>
+        <p>to try it click card and follow some simple steps and then you will get that is it fake or real.</p>
+      </a>
+      <a href="darkweb.html" class="service-card">
+        <i class="ri-lock-line text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Dark Web Checker</h3>
+        <p>to try it click card and follow some simple steps and then it will tell you that is your details selling on darkweb.</p>
+      </a>
+      <a href="letest news.html" class="service-card">
+        <i class="ri-newspaper-line text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">letest new</h3>
+        <p>by clicking this card you get letest new which will be related to cybersequrity.</p>
+      </a>
+    </div>
+  </section>
+  <div>
+    <p class="text-1xl text-center mt-20 text-cyan-300 font-bold"> "Please note: This platform is an early prototype and may not always be fully accurate. Your feedback will help improve its performance and reliability as we work toward creating a more robust and precise tool."</p>
+  </div>
+ <!-- Footer -->
+ <footer class="footer mt-80">
+  <p>&copy; 2025 Cybersecurity Hub. All rights reserved.<br><i class="ri-github-fill"></i></p>
+</footer>
+</body>
+</html>
