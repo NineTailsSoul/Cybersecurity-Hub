@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About the Creator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    /* Body Styling with OG Background */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5); /* Original Background */
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;  /* Adding moving gradient for dynamic effect */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    /* Animation for Moving Gradient */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Container for centering content */
+    .container {
+      text-align: center;
+      background: rgba(45, 55, 72, 0.9); /* Service card color */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+    }
+
+    /* Logo Styling */
+    .logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+
+    /* Section for images next to the GitHub Logo */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      width: 80px; /* You can adjust the size of the images */
+      height: auto; /* This ensures the images maintain their aspect ratio */
+      border-radius: 8px;
+    }
+
+    /* Styling for title and section */
+    h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #cbd5e0;
+      margin: 10px 0;
+    }
+
+    /* Link Styling */
+    .github-link {
+      color: #18848b;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .github-link:hover {
+      text-decoration: underline;
+    }
+
+    .email-link {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1e8daf;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Section for GitHub Logo and Images -->
+    <div class="image-container">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="logo">
+    </div>
+
+    <!-- Title -->
+    <h1>About the Creator</h1>
+
+    <!-- GitHub ID -->
+    <p>GitHub ID: <a href="https://github.com/NineTailsSoul" class="github-link" target="_blank">https://github.com/NineTailsSoul</a></p>
+
+    <!-- Email -->
+    <p>Email: <a href="aryansinghsunil2010@gmail.com" class="email-link">aryansinghsunil2010@gmail.com</a></p>
+  </div>
+</body>
+</html>
