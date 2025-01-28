@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Bug</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Moving Gradient Background */
+    body {
+      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Centered container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    /* Card Style */
+    .card {
+      background: rgba(45, 55, 72, 0.9);
+      padding: 35px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 30px rgba(0, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+        <h1>Sorry but this service not avilable at this time sorry<br>you can report bug at this email "aryansinghsunil2010@gmail.com"</h1>
+    </div>
+  </div>
+
+</body>
+</html>
