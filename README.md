@@ -39,3 +39,7 @@ Fork it, star it ⭐, and open a PR! Let's grow together!
 3. **Google News API**  
    - Used to display the latest news on cybersecurity threats and updates.  
    - [Google News API Documentation](https://newsapi.org/)
+
+# 🧐 IMPORTANT
+
+Disclaimer: The information provided by this website is intended to enhance your cybersecurity awareness. While we strive for accuracy, we recommend double-checking critical details from trusted sources. Stay safe and informed!
