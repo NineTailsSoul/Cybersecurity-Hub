@@ -7,28 +7,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <style>
-    /* Body Styling with OG Background */
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #1a202c, #2c5282, #4fd1c5); /* Original Background */
-      background-size: 300% 300%;
-      animation: gradientMove 8s ease infinite;  /* Adding moving gradient for dynamic effect */
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
+    /* Video Background Styling */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    /* Animation for Moving Gradient */
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     /* Container for centering content */
     .container {
       text-align: center;
@@ -94,6 +82,17 @@
   </style>
 </head>
 <body>
+  <!-- Video Background -->
+  <video autoplay muted loop class="video-bg">
+    <source src="bg1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // Select the video element and set the playback speed
+    const videoBg = document.querySelector('.video-bg');
+    videoBg.playbackRate = 0.5; // Adjust the value for speed (0.5 = half speed)
+  </script>
   <div class="container">
     <!-- Section for GitHub Logo and Images -->
     <div class="image-container">

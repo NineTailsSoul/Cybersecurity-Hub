@@ -20,10 +20,8 @@ Fork it, star it ⭐, and open a PR! Let's grow together!
 
 # 📷 Some screenshorts of website 🌠
 
-![pic1](https://github.com/user-attachments/assets/f9907484-6f80-4a9c-97e4-1094546809cb)
+![alt text](pic1.png)
 
+![alt text](pic2.png)
 
-![pic2](https://github.com/user-attachments/assets/95a90d65-4638-4cdc-9c22-803692c50378)
-
-
-![pic3](https://github.com/user-attachments/assets/4542a980-69ef-4219-beb2-7e217f37ca9b)
+![alt text](pic3.png)
