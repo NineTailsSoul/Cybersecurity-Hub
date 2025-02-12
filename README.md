@@ -25,3 +25,17 @@ Fork it, star it ⭐, and open a PR! Let's grow together!
 ![alt text](pic2.png)
 
 ![alt text](pic3.png)
+
+# 📥 APIs USED
+
+1. **Google Safe Browsing API**  
+   - Used for Phishing Protection by checking URLs for threats.  
+   - [Google Safe Browsing API Documentation](https://developers.google.com/safe-browsing)  
+
+2. **Have I Been Pwned API**  
+   - Used for Dark Web Monitoring to check if emails or passwords are compromised.  
+   - [Have I Been Pwned API Documentation](https://haveibeenpwned.com/API/v3)  
+
+3. **Google News API**  
+   - Used to display the latest news on cybersecurity threats and updates.  
+   - [Google News API Documentation](https://newsapi.org/)
